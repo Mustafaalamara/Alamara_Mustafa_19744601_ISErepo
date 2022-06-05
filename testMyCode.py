@@ -7,10 +7,10 @@ def testupper_lower():
     assert actual, "CALCULATOR"
     
 def test_containsNumber():
-    actual = code.containsNumber("73Abdut77uial")
+    actual = code.contains_number("73Abdut77uial")
     assert actual
     
-    actual = code.containsNumber("abcDEsdf")
+    actual = code.contains_number("abcDEsdf")
     assert not actual
     
 def test_Valid_Number():
@@ -20,18 +20,20 @@ def test_Valid_Number():
     actual = code.valid_number("asdaf")
     assert not actual
     
-def test_remove_and_change():
-    actual = code.remove_and_change("BAA3AAD", 1)
-    assert "baaaad" == actual, "Including digits and ch = 1"
+def test_remove_and_upper():
     
-    actual = code.remove_and_change("4ftern00n", 2)
+    actual = code.remove_and_upper("4ftern00n")
     assert "FTERNN" == actual, "Including digits and ch = 2"
     
-    actual = code.remove_and_change("STRUCTURE", 1)
-    assert "structure" == actual, "Doesn't include digits and ch = 1"
-    
-    actual = code.remove_and_change("assignment", 2)
+    actual = code.remove_and_upper("assignment")
     assert "ASSIGNMENT" == actual, "Doesn't include digits and ch = 2"
+    
+def test_remove_and_lower():
+    actual = code.remove_and_lower("BAA33LKD")
+    assert 'baalkd' == actual, "Including digits"
+        
+    actual = code.remove_and_lower("STRUCTURE")
+    assert "structure" == actual, "Doesn't include digits"
     
 def test_meter_to_feet():
     actual = code.meters_to_feet(2)
@@ -42,19 +44,20 @@ def test_feet_to_meters():
     assert 4 == actual
     
 def test_cm_to_inches():
-    actual = code.cm_to_inches(15)
-    assert  5.905 == actual
+    actual = code.cm_to_inches(10)
+    assert  3.937 == actual
     
 def test_inches_to_cm():
-    actual = code.meters_to_feet(8)
-    assert 20.32 == actual
+    actual = code.inches_to_cm(4)
+    assert 10.16 == actual
     
     
 if __name__ == "__main__":
     testupper_lower()
     test_containsNumber()
     test_Valid_Number()
-    test_remove_and_change()
+    test_remove_and_upper()
+    test_remove_and_lower()
     test_meter_to_feet()
     test_feet_to_meters()
     test_cm_to_inches()

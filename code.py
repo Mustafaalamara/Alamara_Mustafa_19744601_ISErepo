@@ -1,36 +1,49 @@
+from numpy import true_divide
+
+
 def lower_upper(string, ch):
     if ch == 1:
         n = string.lower()
     elif ch == 2:
         n = string.upper()
-    print(n)
+    #print(n)
     return n
 
-def containsNumber(string):
-    for a in string:
-        if a.isdigit():
-            a = True
-            print("It does contain numbers")
-        else:
-            a = False
-            print("It doesn't contain numbers")
+def containss_number(string):
+    if string.isdigit() == True:
+        a = True
+    elif string.isdigit() == False:
+        a = False
+    print(a)
     return a
 
+def contains_number(string):
+    b = False
+    for a in string:
+        if a.isdigit():
+            b = True
+    return b
+    
+#print(containsNumber)
+
 def valid_number(string):
+    b = False
     for a in string:
         if a.isnumeric():
-            return True
-    return False
-
-def remove_and_change(string, ch):
+            b = True
+    return b
+    
+def remove_and_upper(string):
     for a in string:
         if (a.isdigit()) == True:
-            string = ''.join((x for x in string if not x.isdigit()))   
-    if ch == 1:
-            ns = string.lower()
-    elif ch == 2:
-            ns = string.upper()
-    print(ns) 
+            string = ''.join((x for x in string if not x.isdigit()))
+    return string.upper()
+
+def remove_and_lower(string):
+    for a in string:
+        if (a.isdigit()) == True:
+            string = ''.join((x for x in string if not x.isdigit()))
+    return string.lower()
 
 def meters_to_feet(meters):
     return meters * 3.281
