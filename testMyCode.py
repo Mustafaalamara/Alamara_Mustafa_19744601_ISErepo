@@ -3,14 +3,14 @@ def testupper_lower():
     actual = code.lower_upper("TESTMYCODE",1)
     assert actual, "testmycode"
     
-    actual = code.lower_upper("calculator", 2)
+    actual = code.lower_upper("alamara", 2)
     assert actual, "CALCULATOR"
     
 def test_containsNumber():
-    actual = code.contains_number("73Abdut77uial")
+    actual = code.contains_number("19744601")
     assert actual
     
-    actual = code.contains_number("abcDEsdf")
+    actual = code.contains_number("Mustafa Alamara")
     assert not actual
     
 def test_Valid_Number():
@@ -32,8 +32,8 @@ def test_remove_and_lower():
     actual = code.remove_and_lower("BAA33LKD")
     assert 'baalkd' == actual, "Including digits"
         
-    actual = code.remove_and_lower("STRUCTURE")
-    assert "structure" == actual, "Doesn't include digits"
+    actual = code.remove_and_lower("SPIDERMAN")
+    assert "spiderman" == actual, "Doesn't include digits"
     
 def test_meter_to_feet():
     actual = code.meters_to_feet(2)
@@ -62,3 +62,4 @@ if __name__ == "__main__":
     test_feet_to_meters()
     test_cm_to_inches()
     test_inches_to_cm()
+    print("NO ERRORS ")

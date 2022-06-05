@@ -1,21 +1,9 @@
-from numpy import true_divide
-
-
 def lower_upper(string, ch):
     if ch == 1:
         n = string.lower()
     elif ch == 2:
         n = string.upper()
-    #print(n)
     return n
-
-def containss_number(string):
-    if string.isdigit() == True:
-        a = True
-    elif string.isdigit() == False:
-        a = False
-    print(a)
-    return a
 
 def contains_number(string):
     b = False
@@ -24,8 +12,6 @@ def contains_number(string):
             b = True
     return b
     
-#print(containsNumber)
-
 def valid_number(string):
     b = False
     for a in string:
